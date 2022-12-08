@@ -10,8 +10,11 @@ import {
 	FaGithub,
 } from 'react-icons/fa'
 import { Button } from '@/styles/Buttons'
+import { useTranslation } from 'react-i18next'
 
 export const Footer = (): JSX.Element => {
+	const { t } = useTranslation()
+
 	return (
 		<FooterWrapper id="social-media">
 			<Container>
@@ -25,10 +28,10 @@ export const Footer = (): JSX.Element => {
 					/>
 					<Box css={{ marginLeft: '$2' }}>
 						<Text type="heading4" color="grey5" css={{ marginBottom: '$2' }}>
-							Thank you!
+							{t('thanks')}
 						</Text>
 						<Text type="body1" color="grey2">
-							Follow me on my social networks and let's talk
+							{t('follow')}
 						</Text>
 					</Box>
 				</Flex>

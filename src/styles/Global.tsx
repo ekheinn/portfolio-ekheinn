@@ -83,8 +83,8 @@ export const globalStyles = globalCss({
 export const GlobalStyle = ({ children }: GlobalStyleProps): JSX.Element => {
 	const theme = createTheme({
 		colors: {
-			brand1: '#193cad',
-			brand2: '#141552',
+			brand1: '#3427cd',
+			brand2: '#2a1c76',
 
 			grey0: '#0A0A0B',
 			grey1: '#121214',

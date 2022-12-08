@@ -11,6 +11,7 @@ import { Text } from '@/styles/Text'
 import { useEffect, useState } from 'react'
 import { FaGithub, FaShare } from 'react-icons/fa'
 import { userData } from '@/utils/userData'
+import { useTranslation } from 'react-i18next'
 
 interface ReposType {
 	id: number
@@ -22,6 +23,7 @@ interface ReposType {
 }
 
 export const Project = (): JSX.Element => {
+	const { t } = useTranslation()
 	const [repositories, setRepositories] = useState<ReposType[]>([])
 
 	useEffect(() => {
@@ -56,7 +58,7 @@ export const Project = (): JSX.Element => {
 
 						<ProjectStack>
 							<Text type="body2" color="grey2">
-								Primary Language:
+								{t('primary_lng')}
 							</Text>
 							{repository.language ? (
 								<ProjectStackTech>
@@ -67,7 +69,7 @@ export const Project = (): JSX.Element => {
 							) : (
 								<ProjectStackTech>
 									<Text color="grey2" type="body2">
-										Primary language not identified
+										{t('not_identified')}
 									</Text>
 								</ProjectStackTech>
 							)}
@@ -78,11 +80,11 @@ export const Project = (): JSX.Element => {
 						</Text>
 						<ProjectLinks>
 							<ProjectLink target="_blank" href={repository.html_url}>
-								<FaGithub /> Github Code
+								<FaGithub /> {t('code')}
 							</ProjectLink>
 							{repository.homepage && (
 								<ProjectLink target="_blank" href={`${repository.homepage}`}>
-									<FaShare /> See demo
+									<FaShare /> {t('demo')}
 								</ProjectLink>
 							)}
 						</ProjectLinks>

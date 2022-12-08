@@ -13,6 +13,7 @@ import { stackData } from '@/utils/stackData'
 import { userData } from '@/utils/userData'
 
 import { FaGithub } from 'react-icons/fa'
+import { useTranslation } from 'react-i18next'
 
 // Page Style
 import {
@@ -31,6 +32,8 @@ export const Home = (): JSX.Element => {
 	const gihubUrl = `https://github.com/${userData.githubUser}`
 	const portfolioUrl = `https://github.com/${userData.githubUser}/portfolio-ekheinn`
 
+	const { t } = useTranslation()
+
 	return (
 		<main id="home">
 			<Header>
@@ -44,29 +47,31 @@ export const Home = (): JSX.Element => {
 								width={'48px'}
 								height={'48px'}
 							/>
-							<Text color="grey4">Hello, my name is {userData.nameUser}</Text>
+							<Text color="grey4">
+								{t('hello')}
+								{userData.nameUser}
+							</Text>
 						</Flex>
 						<Text as="h1" type="heading1" color="grey5">
-							I{' '}
+							{t('heading1')}
 							<Text as="span" type="heading1" color="brand1">
-								love
-							</Text>{' '}
-							creating and{' '}
+								{t('heading2')}
+							</Text>
+							{t('heading3')}
 							<Text as="span" type="heading1" color="brand1">
-								developing
-							</Text>{' '}
-							projects
+								{t('heading4')}
+							</Text>
+							{t('heading5')}
 						</Text>
 						<Text type="body1" color="grey2">
-							Discover here in this environment, created especially for you, all
-							my projects and technologies
+							{t('discover')}
 						</Text>
 						<HeaderButtonsArea>
 							<Button as="a" type="primary" href="#projects">
-								See Projects
+								{t('see_projects')}
 							</Button>
 							<Button as="a" type="outline" target="_blank" href={portfolioUrl}>
-								See my portfolio source code
+								{t('source_code')}
 							</Button>
 							<Button
 								color="grey5"
@@ -92,12 +97,13 @@ export const Home = (): JSX.Element => {
 					<ProjectAreaWrapperColumns>
 						<ProjectsAreaSocialMediaMessage>
 							<Text as="h2" type="heading4" color="grey4">
-								My projects
+								{t('my_projects')}
 							</Text>
 							<Text as="p" type="body1" color="grey2">
-								Some of my{' '}
-								<Text as="span" color="brand5">
-									side projects
+								{t('side_projects1')}
+
+								<Text as="span" color="brand1">
+									{t('side_projects2')}
 								</Text>
 							</Text>
 						</ProjectsAreaSocialMediaMessage>

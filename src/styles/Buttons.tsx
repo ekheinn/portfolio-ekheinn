@@ -25,7 +25,11 @@ export const Button = styled('button', {
 				background: 'transparent',
 				borderColor: 'transparent',
 				fontWeight: '500',
+				'&:hover': {
+					backgroundColor: '$grey1',
+				},
 			},
+
 			primary: {
 				background: '$brand1',
 				borderColor: '$brand1',
@@ -91,14 +95,15 @@ export const Button = styled('button', {
 			},
 
 			icon: {
-				borderColor: '$grey1',
-				backgroundColor: '$grey1',
+				borderColor: '$grey0',
+				backgroundColor: '$brand2',
 				paddingInline: '1rem',
 				'& svg': {
 					fill: '$grey2',
 				},
 				'&:hover': {
-					backgroundColor: '$grey1',
+					backgroundColor: '$brand1',
+					borderColor: '$grey0',
 				},
 			},
 			circle: {
